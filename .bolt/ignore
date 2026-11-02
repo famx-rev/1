@@ -1,0 +1,6 @@
+src/components/
+src/hooks/*
+src/layout/*
+src/types
+src/layout
+src/services/*

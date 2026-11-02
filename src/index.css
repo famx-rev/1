@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .dark-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                 0 0 20px rgba(59, 130, 246, 0.3),
+                 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+
+  .dark-glow-sm {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+                 0 0 10px rgba(59, 130, 246, 0.3);
+  }
+
+  .dark-glow-xs {
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.3),
+                 0 0 6px rgba(59, 130, 246, 0.2);
+  }
+
+  .fire-glow {
+    animation: fireGlow 3s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+                 0 0 40px rgba(255, 255, 255, 0.3),
+                 0 0 60px rgba(59, 130, 246, 0.3);
+  }
+  to {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5),
+                 0 0 60px rgba(255, 255, 255, 0.5),
+                 0 0 80px rgba(59, 130, 246, 0.5);
+  }
+}
+
+@keyframes fireGlow {
+  0% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4),
+                 0 0 40px rgba(255, 211, 25, 0.3),
+                 0 0 60px rgba(255, 41, 117, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
+                 0 0 60px rgba(255, 211, 25, 0.5),
+                 0 0 90px rgba(255, 41, 117, 0.4);
+  }
+}
+
+.retro-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 211, 25, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 41, 117, 0.1) 1px, transparent 1px);
+  animation: grid 15s linear infinite;
+}
+
+@keyframes grid {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromBottom2 {
+  from { transform: translateY(8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+body {
+  @apply antialiased;
+}
